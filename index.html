@@ -80,6 +80,7 @@ const operate = function(operator, a, b) {
 
 let aString = '';
 let bString ='';
+let answer = ''
 let numHolder =[];
 
 document.getElementById('buttonContainer').addEventListener('click', event => {
@@ -193,7 +194,6 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
         document.getElementById('display').innerHTML = `${screen}`;  
     }
 
-
     else if (event.target.className === '9'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 9 ;
         aString += screen.toString();
@@ -221,54 +221,98 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
     }
 
 
-    else if (event.target.className === '+ operator'){
+    else if (event.target.className === '+ operator' && !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '+' ;
         numHolder.push(`${aString}`,'+');
         document.getElementById('display').innerHTML = `${screen}`; 
     }
 
-    else if (event.target.className === '- operator'){
+    else if (event.target.className === '+ operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = '+';
+        numHolder[0] = answer;
+        numHolder[1] = '+';
+        bString = '';
+        console.log(answer);
+        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+    }
+
+    else if (event.target.className === '- operator'&& !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '-' ;
         numHolder.push(`${aString}`,'-');
         document.getElementById('display').innerHTML = `${screen}`; 
     }
 
-    else if (event.target.className === '/ operator'){
+    else if (event.target.className === '- operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = '-';
+        numHolder[0] = answer;
+        numHolder[1] = '-';
+        bString = '';
+        console.log(answer);
+        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+    }
+
+
+    else if (event.target.className === '/ operator' && !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '/' ;
         numHolder.push(`${aString}`,'/');
         document.getElementById('display').innerHTML = `${screen}`; 
     }
 
-    else if (event.target.className === '* operator'){
+    else if (event.target.className === '/ operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = '/';
+        numHolder[0] = answer;
+        numHolder[1] = '/';
+        bString = '';
+        console.log(answer);
+        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+    }
+
+
+    else if (event.target.className === '* operator'&& !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '*' ;
         numHolder.push(`${aString}`,'*');
         document.getElementById('display').innerHTML = `${screen}`; 
     }
 
-    else if(event.target.className === 'equal'){
-        numHolder.push(`${bString}`);
+    else if (event.target.className === '* operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = '*';
+        numHolder[0] = answer;
+        numHolder[1] = '*';
+        bString = '';
+        console.log(answer);
+        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+    }
+    
+
+    else if(event.target.className === 'equal' && !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){//I might have to make a dup of this as well and tweak it
+        numHolder.push(bString);
         let operator = numHolder[1].toString();
         let a = parseInt(numHolder[0].toString());
         let b = parseInt(numHolder[2].toString());
-        let answer = operate(operator, a, b);
+        answer = operate(operator, a, b);
         document.getElementById('display').innerHTML = `${answer}`;
-        console.log(answer); 
+        console.log(numHolder); 
+        console.log(answer);
+    }
+
+    else if(event.target.className === 'equal' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){//I might have to make a dup of this as well and tweak it
+        numHolder[2] = bString;
+        let operator = numHolder[1].toString();
+        let a = parseInt(numHolder[0].toString());
+        let b = parseInt(numHolder[2].toString());
+        answer = operate(operator, a, b);
+        document.getElementById('display').innerHTML = `${answer}`;
+        console.log(numHolder); 
+        console.log(answer);
     }
 
     else if(event.target.className === 'operator clear'){
         location.reload();
     }
-   console.log(numHolder);
-   console.log(bString);
+
+    
 } );
-
-//THINGS TO FIGURE OUT
-//How to push int together for one big int until operator is clicked(spread operator?)
-//How to clear array once the the array is made a string
-
-//Maybe wait to push to array until operator is clicked
-
-
+//Idea: Make a third set of logic if statements that IF there is an answer then its written as the aString again.
 </script>
 </body>
 </html>
