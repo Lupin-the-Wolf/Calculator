@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class ='calculator'>
+    <div class = 'container'>
+        <h3 class = 'display' id = 'display'>Hello World</h3>
+        <div class = 'buttonContainer' id = 'buttonContainer'>
+            <button id = 'calButton' class = '+ operator'>+</button>
+            <button id = 'calButton' class = '- operator'>-</button>
+            <button id = 'calButton' class = '* operator'>*</button>
+            <button id = 'calButton' class = '/ operator'>/</button>
+            <button id = 'calButton' class = 'operator clear'>AC</button>
+            <button id = 'calButton' class = '1'>1</button>
+            <button id = 'calButton' class = '2'>2</button>
+            <button id = 'calButton' class = '3'>3</button>
+            <button id = 'calButton' class = '4'>4</button>
+            <button id = 'calButton' class = '5'>5</button>
+            <button id = 'calButton' class = '6'>6</button>
+            <button id = 'calButton' class = '7'>7</button>
+            <button id = 'calButton' class = '8'>8</button>
+            <button id = 'calButton' class = '9'>9</button> 
+            <button id = 'calButton' class = '0'>0</button> 
+            <button id = 'equal' class = 'equal'>=</button>
+        </div>        
+    </div>
+</div>
+    <div class = 'footer'>
+            <h1>Copyright © Peter Bartausky 2022</h1>
+    </div>
+<!-- <a href ='https://github.com/Lupin-the-Wolf'></a><img src="/images/Octocat.jpg"> -->
+<script>
+
+const add = function(a,b) {
+	let answer = a += b;
+  return answer;
+};
+
+const subtract = function(a,b) {
+  let answer = a -= b;
+  return answer;
+};
+
+const divide = function(a,b) {
+    let answer = a /= b;
+    return answer;
+}
+
+const multiply = function(a,b) {
+  let answer = a *= b;
+  return answer;
+
+};
+
+const operate = function(operator, a, b) {
+    if(operator === '+'){
+        return add(a,b);
+    }
+
+    else if(operator === '-'){
+        return subtract (a,b);
+    }
+
+    else if(operator === '/'){
+        return divide (a,b);
+    }
+
+    else if(operator === '*'){
+        return multiply (a,b);
+    }
+}
+
+
+
+let aString = '';
+let bString ='';
+let numHolder =[];
+
+document.getElementById('buttonContainer').addEventListener('click', event => {
+    
+    
+    if (event.target.className === '1' && !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 1;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if(event.target.className === '1' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 1;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if (event.target.className === '2' && (!(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-')))){
+        let screen = 2 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if(event.target.className === '2' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 2;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+
+    else if (event.target.className === '3'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 3 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if(event.target.className === '3' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 3;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if (event.target.className === '4'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 4 ;
+        aString= screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if(event.target.className === '4' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 4;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+
+    else if (event.target.className === '5'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 5 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;
+    }
+
+    else if(event.target.className === '5' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 5;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+
+    else if (event.target.className === '6'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 6 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;
+    }
+
+    else if(event.target.className === '6' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 6;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if (event.target.className === '7'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 7 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`; 
+    }
+
+    else if(event.target.className === '7' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 7;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+
+    else if (event.target.className === '8'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 8 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if(event.target.className === '8' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 8;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+
+    else if (event.target.className === '9'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 9 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;   
+    }
+
+    else if(event.target.className === '9' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 9;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+    else if (event.target.className === '0'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
+        let screen = 0 ;
+        aString += screen.toString();
+        document.getElementById('display').innerHTML = `${screen}`;   
+    }
+
+    else if(event.target.className === '0' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
+        let screen = 0;
+        bString += screen.toString();
+        console.log(bString);
+        document.getElementById('display').innerHTML = `${screen}`;  
+    }
+
+
+    else if (event.target.className === '+ operator'){
+        let screen = '+' ;
+        numHolder.push(`${aString}`,'+');
+        document.getElementById('display').innerHTML = `${screen}`; 
+    }
+
+    else if (event.target.className === '- operator'){
+        let screen = '-' ;
+        numHolder.push(`${aString}`,'-');
+        document.getElementById('display').innerHTML = `${screen}`; 
+    }
+
+    else if (event.target.className === '/ operator'){
+        let screen = '/' ;
+        numHolder.push(`${aString}`,'/');
+        document.getElementById('display').innerHTML = `${screen}`; 
+    }
+
+    else if (event.target.className === '* operator'){
+        let screen = '*' ;
+        numHolder.push(`${aString}`,'*');
+        document.getElementById('display').innerHTML = `${screen}`; 
+    }
+
+    else if(event.target.className === 'equal'){
+        numHolder.push(`${bString}`);
+        let operator = numHolder[1].toString();
+        let a = parseInt(numHolder[0].toString());
+        let b = parseInt(numHolder[2].toString());
+        let answer = operate(operator, a, b);
+        document.getElementById('display').innerHTML = `${answer}`;
+        console.log(answer); 
+    }
+
+    else if(event.target.className === 'operator clear'){
+        location.reload();
+    }
+   console.log(numHolder);
+   console.log(bString);
+} );
+
+//THINGS TO FIGURE OUT
+//How to push int together for one big int until operator is clicked(spread operator?)
+//How to clear array once the the array is made a string
+
+//Maybe wait to push to array until operator is clicked
+
+
+</script>
+</body>
+</html>
