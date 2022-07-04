@@ -76,6 +76,10 @@ const operate = function(operator, a, b) {
     }
 }
 
+const stringCleaner = function(){
+    bString = '';
+}
+
 
 
 let aString = '';
@@ -89,135 +93,136 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
     if (event.target.className === '1' && !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 1;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;  
+        console.log (aString);
+        document.getElementById('display').innerHTML = `${aString}`;  
     }
 
     else if(event.target.className === '1' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 1;
         bString += screen.toString();
-        console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`; 
+         
     }
 
     else if (event.target.className === '2' && (!(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-')))){
         let screen = 2 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${aString}`;  
     }
 
     else if(event.target.className === '2' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 2;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
 
     else if (event.target.className === '3'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 3 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${aString}`;  
     }
 
     else if(event.target.className === '3' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 3;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
     else if (event.target.className === '4'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 4 ;
         aString= screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${aString}`;  
     }
 
     else if(event.target.className === '4' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 4;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
 
     else if (event.target.className === '5'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 5 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;
+        document.getElementById('display').innerHTML = `${aString}`;
     }
 
     else if(event.target.className === '5' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 5;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
 
     else if (event.target.className === '6'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 6 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;
+        document.getElementById('display').innerHTML = `${aString}`;
     }
 
     else if(event.target.className === '6' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 6;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
     else if (event.target.className === '7'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 7 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`; 
+        document.getElementById('display').innerHTML = `${aString}`; 
     }
 
     else if(event.target.className === '7' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 7;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
 
     else if (event.target.className === '8'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 8 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${aString}`;  
     }
 
     else if(event.target.className === '8' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 8;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
     else if (event.target.className === '9'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 9 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;   
+        document.getElementById('display').innerHTML = `${aString}`;   
     }
 
     else if(event.target.className === '9' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 9;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
     else if (event.target.className === '0'&& !(numHolder.includes('*')) && !(numHolder.includes('+')) && !(numHolder.includes('/')) && !(numHolder.includes('-'))){
         let screen = 0 ;
         aString += screen.toString();
-        document.getElementById('display').innerHTML = `${screen}`;   
+        document.getElementById('display').innerHTML = `${aString}`;   
     }
 
     else if(event.target.className === '0' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = 0;
         bString += screen.toString();
         console.log(bString);
-        document.getElementById('display').innerHTML = `${screen}`;  
+        document.getElementById('display').innerHTML = `${bString}`;  
     }
 
 
@@ -229,11 +234,18 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
 
     else if (event.target.className === '+ operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '+';
-        numHolder[0] = answer;
+        numHolder[0] = aString;
+        numHolder [2] = bString;
+        let operator = numHolder[1].toString();
+        let a = parseInt(numHolder[0].toString());
+        let b = parseInt(numHolder[2].toString());
+        aString = operate(operator, a, b);
+        numHolder[0] = aString;
+        console.log (aString);
+        document.getElementById('display').innerHTML = `${aString}`; //for multiple equations 
+        stringCleaner();
         numHolder[1] = '+';
-        bString = '';
-        console.log(answer);
-        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+        console.log(numHolder);
     }
 
     else if (event.target.className === '- operator'&& !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
@@ -244,13 +256,19 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
 
     else if (event.target.className === '- operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '-';
-        numHolder[0] = answer;
-        numHolder[1] = '-';
-        bString = '';
+        numHolder[0] = aString;
+        numHolder [2] = bString;
+        let operator = numHolder[1].toString();
+        let a = parseInt(numHolder[0].toString());
+        let b = parseInt(numHolder[2].toString());
+        aString = operate(operator, a, b);
+        numHolder[0] = aString;
         console.log(answer);
-        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+        document.getElementById('display').innerHTML = `${aString}`; //for multiple equations 
+        stringCleaner();
+        numHolder[1] = '-';
+        console.log(numHolder);
     }
-
 
     else if (event.target.className === '/ operator' && !(numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '/' ;
@@ -260,11 +278,18 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
 
     else if (event.target.className === '/ operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '/';
-        numHolder[0] = answer;
-        numHolder[1] = '/';
-        bString = '';
+        numHolder[0] = aString;
+        numHolder [2] = bString;
+        let operator = numHolder[1].toString();
+        let a = parseInt(numHolder[0].toString());
+        let b = parseInt(numHolder[2].toString());
+        aString = operate(operator, a, b);
+        numHolder[0] = aString;
         console.log(answer);
-        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+        document.getElementById('display').innerHTML = `${aString}`; //for multiple equations 
+        stringCleaner();
+        numHolder[1] = '/';
+        console.log(numHolder);
     }
 
 
@@ -276,11 +301,18 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
 
     else if (event.target.className === '* operator' && (numHolder.includes('*') || numHolder.includes('+') || numHolder.includes('/') || numHolder.includes('-'))){
         let screen = '*';
-        numHolder[0] = answer;
-        numHolder[1] = '*';
-        bString = '';
+        numHolder[0] = aString;
+        numHolder [2] = bString;
+        let operator = numHolder[1].toString();
+        let a = parseInt(numHolder[0].toString());
+        let b = parseInt(numHolder[2].toString());
+        aString = operate(operator, a, b);
+        numHolder[0] = aString;
         console.log(answer);
-        document.getElementById('display').innerHTML = `${screen}`; //for multiple equations 
+        document.getElementById('display').innerHTML = `${aString}`; //for multiple equations 
+        stringCleaner();
+        numHolder[1] = '*';
+        console.log(numHolder);
     }
     
 
@@ -310,6 +342,7 @@ document.getElementById('buttonContainer').addEventListener('click', event => {
         location.reload();
     }
 
+    console.log(numHolder);
     
 } );
 //Idea: Make a third set of logic if statements that IF there is an answer then its written as the aString again.
