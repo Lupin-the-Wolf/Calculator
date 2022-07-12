@@ -39,22 +39,26 @@
 
 const add = function(a,b) {
 	let answer = a += b;
-  return answer;
+    return Math.round(answer * 100000) / 100000;
 };
 
 const subtract = function(a,b) {
   let answer = a -= b;
-  return answer;
+  return Math.round(answer * 100000) / 100000;
 };
 
 const divide = function(a,b) {
     let answer = a /= b;
-    return answer;
+    if (a === 0 || b === 0){
+        return "Oops Don't Do That!"
+    }else{
+        return Math.round(answer * 100000) / 100000;
+    }
 }
 
 const multiply = function(a,b) {
   let answer = a *= b;
-  return answer;
+  return Math.round(answer * 100000) / 100000;
 
 };
 
